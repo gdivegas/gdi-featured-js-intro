@@ -56,7 +56,6 @@
           <h3>Welcome!</h3>
           <div class = "left-align">
           <p><b>Girl Develop It</b> is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p><br>
-          <h4>Some "rules"</h4>
           <ul>
             <li>We are here for you!</li>
             <li>Every question is important.</li>
@@ -72,9 +71,10 @@
               <h4>Tell us about yourself.</h4>
               <ul>
                 <li>Who are you?</li>
+                <li>What is your experience level with coding?</li>
                 <li>What do you hope to get out of the class?</li>
                 <!-- Feel free to change the icebreaker question! -->
-                <li>What's your favorite ice cream flavor?</li>
+                <li>What is something interesting about yourself?</li>
               </ul>
             </div>
         </section>
@@ -88,22 +88,13 @@
 
         <section>
           <h3>JavaScript is the language of the web</h3>
-          <img src="dist/img/client-server.jpg" alt="Laptop and server connected via the internet"/>
           <p>
-            <small class="credit">Photo credits: <a href="http://www.flickr.com/photos/papalars/5210226441/" target="_blank">Andrew E. Larson</a> and <a href="http://www.flickr.com/photos/johnseb/3425464/" target="_blank">John Seb Barber</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></small>
+            [Diagram: How the Web Works]
           </p>
         </section>
 
         <section>
           <h3>JavaScript works with HTML & CSS</h3>
-          <img src="dist/img/triangle.jpg" alt="Triangle"/>
-          <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/ggunson/44539990/">Gillicious</a> <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">cc</a>
-        </section>
-
-        <section>
-          <h3>JavaScript lets you reuse code</h3>
-          <img src="dist/img/desert-landscape.jpg" alt="Desert landscape"/>
-          <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/philsnyder/4216356826/" target="_blank">Phil Synder</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
         </section>
 
         <section>
@@ -150,7 +141,7 @@
         <section>
           <h3>What can JavaScript do?</h3>
           <p>
-            <a href="https://youtu.be/dvG9FgbzK9Y">Robots</a>
+            <a href="https://www.youtube.com/watch?v=XBNLgBajXsg">Robots</a>
           </p>
         </section>
 
@@ -186,7 +177,6 @@
     &lt;p&gt;This is my awesome JavaScript code.&lt;/p&gt;
     &lt;script&gt;
       alert('Hello World!');
-      console.log('Secret message');
     &lt;/script&gt;
   &lt;/body&gt;
 &lt;/html&gt;
@@ -262,13 +252,31 @@
         <section>
           <h3>Let's Develop It</h3>
           <ul>
-            <li>Open the console.</li>
-            <li>In Chrome, use the keyboard shortcut:
+            <li>Add the new line of code below.</li>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Test Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;This is my awesome JavaScript code.&lt;/p&gt;
+    &lt;script&gt;
+      console.log('Secret message');
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Let's Try It</h3>
+          <ul>
+            <li>Open your practice page.</li>
+            <li>To open the console in Chrome, use the keyboard shortcut:
               <ul>
                 <li>Mac: <strong>Command + Option + J</strong></li>
                 <li>Windows: <strong>Control + Shift + J</strong></li>
               </ul>
-            <li>Open your practice page.</li>
             <li>Do you see anything in the console?</li>
             <li>Try typing in 2 + 2 and hitting enter.</li>
           </ul>
@@ -314,8 +322,8 @@ console.log('Hello World!'); // Or make short comments here</code></pre>
             <li>Open <code>index.html</code>.</li>
             <li>Add a comment to the code.</li>
             <li>Try different ways of printing a message.</li>
-            <li>Create a new file called <code>mycode.js</code>.</li>
-            <li>Move your code to this file and link it to your page.</li>
+            <li>Create a new file called <code>myscript.js</code>.</li>
+            <li>Move your code to this file and link it to your page at the bottom of the body. This placement is important!</li>
           </ul>
         </section>
 
@@ -353,7 +361,7 @@ console.log('Hello World!'); // Or make short comments here</code></pre>
             <li>The variable name is case-sensitive.</li>
             <li>A new variable should have a unique name.</li>
             <li>Variable names need to start with a letter, <code>$</code>, or <code>_</code>.</li>
-            <li>Avoid <a href="https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words">reserved words</a>.</li>
+            <li>Don't use <a href="https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words">reserved words</a>.</li>
             <li>Choose clarity and meaning for humans to read later.</li>
           </ul>
         </section>
@@ -382,7 +390,7 @@ console.log(numberOfKittens);
               <pre><code class="javascript">var myAge = 30;</code></pre>
             </li>
             <li><b>boolean</b> true or false
-              <pre><code class="javascript">var catsAreBest = true;</code></pre>
+              <pre><code class="javascript">var learningToCode = true;</code></pre>
             </li>
             <li><b>undefined</b> value that hasn't been defined
               <pre><code class="javascript">var favoriteThings;</code></pre>
@@ -408,7 +416,6 @@ console.log(numberOfKittens);
 <pre><code class="javascript">var numberOfKittens = 5;
 var cutenessRating = 9.6;
 </code></pre>
-          <p>JavaScript automatically converts integers to floats</p>
           <p><code>NaN</code> = Not-A-Number</p>
         </section>
 
@@ -492,27 +499,19 @@ var numberOfAnimals = numberOfKittens + numberOfPuppies;
         <section>
           <h3>String Operators</h3>
           <p>You can put strings together with a <code>+</code>, the concatenation operator.</p>
-          <pre><code class="javascript">var kittensName = 'Fluffy ';
-var fullName = kittensName + 'McDougle';
-console.log(fullName); // Outputs 'Fluffy McDougle'
+          <pre><code class="javascript">var name = 'Rachel';
+var greeting = 'Welcome, ' + name;
+console.log(greeting); // Outputs 'Welcome, Rachel'
 </code></pre>
         </section>
 
         <section>
           <h3>String Operators</h3>
           <p>You can also use <code>+=</code> to add things to the end of a string.</p>
-<pre><code class="javascript">var kittensName = 'Admiral ';
-kittensName += 'Snuggles';
-console.log(kittensName); // Outputs 'Admiral Snuggles'
+<pre><code class="javascript">var greeting = 'Welcome, ';
+greeting += 'Rachel';
+console.log(greeting); // Outputs 'Welcome, Rachel'
 </code></pre>
-        </section>
-
-        <section>
-          <h3>Concatenate!</h3>
-          <img src="dist/img/concatenate.jpg" alt="Cat jumping on another cat."/>
-          <p class="credit">
-            <small>Photo credit: <a href="http://www.flickr.com/photos/furlined/8191032061/" target="_blank">Matt</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></small>
-          </p>
         </section>
 
         <section>
@@ -529,13 +528,22 @@ var allTheFruit = 'I have ' + numberOfFruit + ' ' + typeOfFruit + '!';
 console.log(allTheFruit);
 </code></pre>
         </section>
+
+        <section>
+          <h3>Prompting for Input</h3>
+          <p>You can ask the user for input using the prompt() method:</p>
+<pre><code class="javascript">var birthYear = prompt("Please enter your birth year:");
+console.log('You are ' + (2018 - birthYear) + ' years old.');
+</code></pre>
+        </section>
+
         <section>
           <h3>Let's Develop It</h3>
           <p>Create a program to calculate the tip at a restaurant. It should:</p>
           <ul>
-            <li>Have variables for the bill <b>pre-tip</b> and the <b>tip percentage</b>.</li>
+            <li>Prompt the user for two variables for the bill: <b>pre-tip amount</b> and the <b>tip percentage</b>.</li>
             <li>Calculate the total bill.</li>
-            <li>Output a sentence like "Your total bill, with tip, is $14.75".</li>
+            <li>Output a sentence like "Your total bill, with 20% tip, is $14.75".</li>
             <li>Bonus: Use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed" target="_blank"><code>toFixed()</code></a> to round the bill total to 2 decimals.</li>
           </ul>
         </section>
@@ -560,6 +568,7 @@ console.log(allTheFruit);
 
         <section>
           <h2>Questions?</h2>
+          <a href="class2.html" title="">Section 2</a>
         </section>
     </div>
     <footer>

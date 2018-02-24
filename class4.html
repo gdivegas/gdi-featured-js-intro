@@ -145,13 +145,13 @@
           <section>
             <h3>DOM Access: By Id</h3>
             <p>You can find nodes by <code>id</code> using the method:</p>
-<pre><code class="javascript">document.getElementById(id);
+<pre><code class="javascript">document.querySelector("#id");
 </code></pre>
           <p>For example, to find:</p>
 <pre><code class="html">&lt;img id="kittenPic" src="http://placekitten.com/g/200/300" alt="cat"/&gt;
 </code></pre>
           <p>We would use:</p>
-<pre><code class="javascript">var imgKitten = document.getElementById('kittenPic');
+<pre><code class="javascript">var imgKitten = document.querySelector('#kittenPic');
 </code></pre>
           </section>
 
@@ -176,20 +176,19 @@ for (var i = 0; i &lt; listItems.length; i++) {
 
           <section>
             <h3>DOM Access: HTML 5</h3>
-            <p>In newer browsers, you can use methods <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName">getElementsByClassName</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector</a></code>, and <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll">querySelectorAll</a></code>.</p><br>
+            <p>In newer browsers, you can use methods <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName">getElementsByClassName</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector</a></code>.</p><br>
             <p>Available in <a href="http://caniuse.com/#search=getElementsByClassName">IE9+, FF3.6+, Chrome 17+, Safari 5+</a>:</p>
 <pre><code class="javascript">document.getElementsByClassName(className);
 </code></pre><br>
           <p>Available in <a href="http://caniuse.com/#search=querySelectorAll">IE8+, FF3.6+, Chrome 17+, Safari 5+</a>:</p>
-<pre><code class="javascript">document.querySelector(cssQuery);
-document.querySelectorAll(cssQuery);
+<pre><code class="javascript">document.querySelector(cssQuery);;
 </code></pre>
           </section>
 
           <section>
             <h3>getElement vs. getElements</h3>
             <p>Any method that starts with <code>getElement</code> will return a <strong>single</strong> node.</p>
-<pre><code class="javascript">document.getElementById('uniqueID'); // returns a single node
+<pre><code class="javascript">document.querySelector('#uniqueID'); // returns a single node
 </code></pre><br>
           <p>Any method that starts with <code>getElements</code> will return an <strong>array</strong> of nodes. To modify a single node, you will need to use bracket notation to get the correct one.</p>
 <pre><code class="javascript">document.getElementsByTagName('p'); // returns multiple nodes
@@ -206,28 +205,12 @@ var specificParagraph = document.getElementsByTagName('p')[2];
           </section>
 
           <section>
-            <h3>DOM Nodes: Attributes</h3>
-            <p>You can access and change attributes of DOM nodes using dot notation.</p><br>
-            <p>To change this element:</p>
-<pre><code class="html">&lt;img id="kittenPic" src="http://placekitten.com/g/200/300" alt="cat"/&gt;
-</code></pre>
-            <p>We could change the src attribute this way:</p>
-<pre><code class="javascript">var imgKitten = document.getElementById('kittenPic');
-
-// will return src attribute on image
-imgKitten.src
-
-// will set our src to a new src
-imgKitten.src = 'http://placekitten.com/g/600/500';</code></pre>
-          </section>
-
-          <section>
             <h3>DOM Nodes: Getting and Setting Attributes</h3>
             <p>You can also use <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute">getAttribute</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">setAttribute</a></code></p>
 <pre><code class="html">&lt;img id="kittenPic" src="http://placekitten.com/g/200/300" alt="cat"/&gt;
 </code></pre>
           <p>We could change the src attribute this way:</p>
-<pre><code class="javascript">var imgKitten = document.getElementById('kittenPic');
+<pre><code class="javascript">var imgKitten = document.querySelector('#kittenPic');
 
 // will return src attribute on image
 imgKitten.getAttribute('src');
@@ -241,13 +224,13 @@ imgKitten.setAttribute('src', 'http://placekitten.com/g/600/500');</code></pre>
             <p>You can change page css using <code>style</code></p><br>
             <p>To make this CSS:</p>
 <pre><code class="css">body {
-  color: red;
+  background-color: red;
 }
 </code></pre>
           <p>Use this JavaScript:</p>
-<pre><code class="javascript">var pageBody = document.getElementsByTagName('body')[0];
+<pre><code class="javascript">var pageBody = document.querySelector('body');
 
-pageBody.style.color = 'red';</code></pre>
+pageBody.style.backgroundColor = 'red';</code></pre>
           </section>
 
           <section>
@@ -256,15 +239,15 @@ pageBody.style.color = 'red';</code></pre>
             <p>To make this CSS:</p>
 <pre><code class="css">body {
   background-color: pink;
-  padding-top: 10px;
+  font-family: 'sans-serif';
 }
 </code></pre>
           <p>Use this JavaScript:</p>
-<pre><code class="javascript">var pageBody = document.getElementsByTagName('body')[0]
+<pre><code class="javascript">var pageBody = document.querySelector('body')
 
 pageBody.style.backgroundColor = 'pink';
 
-pageBody.style.paddingTop = '10px';
+pageBody.style.fontFamily = 'sans-serif';
 </code></pre>
           </section>
 
@@ -272,65 +255,6 @@ pageBody.style.paddingTop = '10px';
           <h3>Let's Develop It</h3>
           <p>Create a simple HTML page or <a href="dist/files/class4.zip">use this sample code</a>.</p>
           <p>Isolate a node (an element on the page) and change an attribute or add a new style.</p>
-          </section>
-
-        <!--Manipulating the DOM-->
-          <section>
-            <h3>DOM innerHTML</h3>
-            <p>Each DOM node has an <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML">innerHTML</a></code> property with the HTML and content of its children. You can use the property to view or change the HTML of a node.</p><br>
-            <p>For example, you can overwrite the entire body:</p>
-  <pre><code class="javascript">var pageBody = document.getElementsByTagName('body')[0];
-
-pageBody.innerHTML = '&lt;h1&gt;Oh Noes!&lt;/h1&gt;&lt;p&gt;I changed the whole page!&lt;/p&gt;'</code></pre><br>
-            <p>Or just add some new content to the end</p>
-  <pre><code class="javascript">pageBody.innerHTML += '...just adding this at the end of the page.';</code></pre>
-          </section>
-
-          <section>
-            <h3>DOM innerHTML continued</h3>
-            <p>You can also target one specific element's content</p><br>
-            <p>To put content in this paragraph element:</p>
-  <pre><code class="html">&lt;p id="warning"&gt;&lt;/p&gt;</code></pre>
-            <p>We can select the node and modify it</p>
-  <pre><code class="javascript">var warningParagraph = document.getElementById('warning');
-
-warningParagraph.innerHTML = 'Danger Will Robinson!';</code></pre>
-          </section>
-
-          <section>
-            <h3>Creating New Nodes</h3>
-            <p>The <code>document</code> object also has methods to create nodes from scratch:</p>
-  <pre><code class="javascript">document.createElement(tagName);
-
-document.createTextNode(text);
-
-element.appendChild(element);</code></pre>
-          </section>
-
-          <section>
-            <h3>Creating New Nodes: Sample Code</h3>
-<pre><code class="javascript">var pageBody = document.getElementsByTagName('body')[0];
-
-// create our image tag with attributes
-var newImg = document.createElement('img');
-newImg.src = 'http://placekitten.com/g/500/200';
-newImg.style.border = '1px solid black';
-
-// add our image to the body
-pageBody.appendChild(newImg);
-
-// create a paragraph tag with content
-var newParagraph  = document.createElement('p');
-var paragraphText = document.createTextNode('Squee!');
-newParagraph.appendChild(paragraphText);
-
-// add our new paragraph to the body
-pageBody.appendChild(newParagraph);</code></pre>
-            </section>
-
-            <section>
-            <h3>Let's Develop It</h3>
-            <p>Create a new paragraph element and add it to a <code>div</code> on your page.</p>
           </section>
 
       <!-- Events -->
@@ -379,19 +303,11 @@ pageBody.appendChild(newParagraph);</code></pre>
           <p>You can call a function from the addEventListener:</p>
 <pre><code class="html">&lt;button id="myBtn"&gt;Click Me!&lt;/button&gt;
 </code></pre>
-<pre><code class="javascript">var button = document.getElementById("myBtn");
+<pre><code class="javascript">var button = document.querySelector("#myBtn");
 
 button.addEventListener("click", function (event) {
   alert("Hi!");
 });</code></pre>
-<p>or</p>
-<pre><code class="javascript">var button = document.getElementById("myBtn");
-
-var sayHi = function (event) {
-  alert("Hi!");
-};
-
-button.addEventListener("click", sayHi);</code></pre>
         </section>
 
 
@@ -399,58 +315,6 @@ button.addEventListener("click", sayHi);</code></pre>
           <h3>Let's Develop It</h3>
           <p>Go back to the sample files you downloaded earlier.</p>
           <p>Make some JavaScript code fire after a <code>mouseover</code> event.</p>
-        </section>
-
-      <!-- More Events -->
-        <section>
-          <h3>Preventing Defaults</h3>
-          <img src="dist/img/donotwant.jpg" alt="A cat resisting a bath"/>
-        </section>
-
-        <section>
-          <h3>Preventing Defaults</h3>
-          <p>Elements like links and checkboxes have default behaviors determined by the browser. However, the <code>event</code> object has a built-in method to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault">prevent the default behavior</a></p>
-          <p>Our anchor link in HTML</p>
-<pre><code class="html">&lt;a id="myLink" href="https://www.girldevelopit.com"&gt;GDI&lt;/a&gt;
-</code></pre>
-<p>Code to prevent going to link's href on click</p>
-<pre><code class="javascript">var link = document.getElementById("myLink");
-
-link.addEventListener("click", function(event) {
-  event.preventDefault();
-});
-</code></pre>
-        </section>
-
-        <section>
-          <h3>currentTarget</h3>
-          <img src="dist/img/arrow.jpg" alt="Lighted arrow sign pointed downward"/>
-          <p class="credit">Photo credit: <a href="https://flic.kr/p/6ei68A" target="_blank">Alan Berning</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-        </section>
-
-        <section>
-          <h3>currentTarget</h3>
-          <p>The event's <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget">currentTarget</a></code> references the element the event listener was attached to.</p>
-          <p>Our button in HTML:</p>
-          <pre><code class="html">&lt;button id="myBtn"&gt;Click Me!&lt;/a&gt;</code></pre>
-          <p>This code adds styles and text to our clicked button</p>
-<pre><code class="javascript">myButton = document.getElementById("myBtn");
-
-myButton.addEventListener("click", function(event) {
-  btn = event.currentTarget;
-
-  btn.style.backgroundColor = 'red';
-  btn.innerHTML = 'Clicked!';
-};</code></pre>
-<p>You may also see code that references the keyword <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this">this</a></code> as the "target".
-        </section>
-
-        <section>
-          <h3>Let's Develop It</h3>
-          <p>Write code that targets this link:</p>
-<pre><code class="html">&lt;a href="http://girldevelopit.com/" id="gdiLink"&gt;Girl Develop It&lt;/a&gt;
-</code></pre>
-          <p>When a user clicks the link, the page should display an error message instead of going to the Girl Develop It homepage.</p>
         </section>
 
       <!-- User input -->
@@ -461,55 +325,17 @@ myButton.addEventListener("click", function(event) {
         </section>
 
         <section>
-          <h3>Forms</h3>
-          <p>You can collect information from users to use in your code. The most common method is an HTML form</p>
-<pre><code class="html">&lt;form id="userForm"&gt;
-  &lt;label for="name"&gt;First Name:&lt;/label&gt;
-  &lt;input type="text" id="firstName"/&gt;
-  &lt;input type="radio" name="married" value="Yes" checked /&gt; Yes
-  &lt;input type="radio" name="married" value="No" /&gt; No
-  &lt;input type="submit" id="submitBtn" value="Submit" /&gt;
-&lt;/form&gt;
+          <h3>Input Elements</h3>
+          <p>You can collect information from users to use in your code from input elements.</p>
+<pre><code class="html">&lt;input type="text" id="firstName"/&gt;
 </code></pre>
         </section>
 
         <section>
           <h3>Retrieving Form Data</h3>
           <p>You retrieve the values of form elements using the <code>value</code> method.</p>
-<pre><code class="javascript">var name = document.getElementById('firstName').value;
+<pre><code class="javascript">var name = document.querySelector('#firstName').value;
 console.log(name);
-</code></pre>
-          <p>You can retrieve the value of a form at any time. Even when an event like <code>blur</code> is triggered (when a form element loses focus).</p>
-        </section>
-
-        <section>
-          <h3>Radio Buttons</h3>
-          <p>Radio buttons usually do not have IDs, so you will need to use a <code>for</code> loop to get the value on each radio:</p>
-<pre><code class="javascript">var radios = document.getElementsByName('married');
-
-var length = radios.length;
-
-for (var i = 0; i &lt; length; i++) {
-  if (radios[i].checked) {
-    var radioButtonValue = radios[i].value;
-    // only one radio can be checked, so stop now
-    break;
-  }
-}
-</code></pre>
-        </section>
-
-        <section>
-          <h3>Submit buttons</h3>
-          <p>If you are going to retrieve form values with the submit button, be sure to prevent the default action!</p>
-<pre><code class="javascript">var submitButton = document.getElementById('submitBtn');
-
-submitButton.addEventListener("click", function(event) {
-  event.preventDefault();
-
-  var name = document.getElementById('firstName').value;
-  console.log(name);
-})
 </code></pre>
         </section>
 

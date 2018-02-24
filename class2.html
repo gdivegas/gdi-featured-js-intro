@@ -54,18 +54,12 @@
 
         <!-- Review -->
         <section>
-        <h3>Let's Look Back</h3>
-        <img src="dist/img/backwards-dance.jpg" alt="Woman looking backward as she dances"/>
-        <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/zeepack/4398082292/" target="_blank">Deepak Bhatia</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-        </section>
-
-        <section>
-        <h3>Code Search</h3>
+        <h3>Let's Review</h3>
         <p>In this code, spot the comment, variables, and operators.</p>
-<pre><code class="javascript">var billPreTip = 10;
-var tipPercent = 0.15; // Can be changed
+<pre><code class="javascript">var billPreTip = prompt("How much is the bill?");
+var tipPercent = prompt("How much do you want to tip?");
 
-var billTip = billPreTip * tipPercent;
+var billTip = billPreTip * tipPercent; //calculate the tip
 var receipt = 'Meal: ' + billPreTip + ' Tip: ' + billTip +
 ' Total: ' + (billPreTip + billTip);
 
@@ -148,7 +142,8 @@ addOne(numberOfPuppies);
 
         <section>
           <h3>Let's Develop It</h3>
-          <p>Write a simple program to combine a first name and a last name inside a function. Then update the function to accept a first and last name as arguments.</p>
+          <p>Write a simple program that calculates a tip for a bill in a function. The function should accept two arguments (bill and tip) and print out a sentence to the console that says:</p> <br>
+          <p>"Your total (including tip) is ____".</p>
         </section>
 
       <!-- returning values -->
@@ -168,7 +163,7 @@ var squareOfFive = square(5); // squareOfFive equals '25'
 
         <section>
           <h3>Let's Develop It</h3>
-          <p>Add a return statement to your 'name' function. Use that function to set the value of a variable.</p>
+          <p>Modify your function so that it returns a value. Then use that returned value in a console.log() outside of the function.</p>
         </section>
 
       <!-- Variable Scope -->
@@ -265,23 +260,23 @@ if (age &gt; 18) {
             </thead>
             <tbody>
               <tr>
-                <td><code>a == b</code></td>
+                <td><code>a==b</code></td>
                 <td>Equal</td>
                 <td><strong><code>TRUE</code></strong> if <code>a</code> is equal to <code>b</code> (can be different types).</td>
               </tr>
               <tr>
-                <td><code>a === b</code></td>
+                <td><code>a===b</code></td>
                 <td>Identical</td>
                 <td>
               <strong><code>TRUE</code></strong> if <code>a</code> is equal to <code>b</code>, and the same type. </td>
               </tr>
               <tr>
-                <td><code>a != b</code></td>
+                <td><code>a!=b</code></td>
                 <td>Not equal</td>
                 <td><strong><code>TRUE</code></strong> if <code>a</code> is not equal to <code>b</code> (can be different types).</td>
               </tr>
               <tr>
-                <td><code>a !== b</code></td>
+                <td><code>a!==b</code></td>
                 <td>Not identical</td>
                 <td><strong><code>TRUE</code></strong> if <code>a</code> is not equal to <code>b</code>, or they are not the same type.</td>
               </tr>
@@ -296,12 +291,12 @@ if (age &gt; 18) {
                 <td><strong><code>TRUE</code></strong> if <code>a</code> is strictly greater than <code>b</code>.</td>
               </tr>
               <tr>
-                <td><code>a &lt;= b</code></td>
+                <td><code>a&lt;= b</code></td>
                 <td>Less than or equal to </td>
                 <td><strong><code>TRUE</code></strong> if <code>a</code> is less than or equal to <code>b</code>.</td>
               </tr>
               <tr>
-                <td><code>a &gt;= b</code></td>
+                <td><code>a&gt;= b</code></td>
                 <td>Greater than or equal to </td>
                 <td><strong><code>TRUE</code></strong> if <code>a</code> is greater than or equal to <code>b</code>.</td>
               </tr>
@@ -416,7 +411,7 @@ if (age &gt;=30 &amp;&amp; yearsAsCitizen &gt; 9) {
 
         <section>
           <h3>Let's Develop It</h3>
-          <p>Add a logical operator to your "what to wear" program.</p>
+          <p>Add a logical operator to your "what to wear" program that checks a variable called condition and tells them to bring an umbrella if the condition is "rainy".</p>
         </section>
 
       <!-- Final slides-->
@@ -436,6 +431,7 @@ if (age &gt;=30 &amp;&amp; yearsAsCitizen &gt; 9) {
 
         <section>
           <h2>Questions?</h2>
+          <a href="class3.html" title="">Section 3</a>
         </section>
     </div>
     <footer>
