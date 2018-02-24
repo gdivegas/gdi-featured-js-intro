@@ -175,19 +175,8 @@ for (var i = 0; i &lt; listItems.length; i++) {
           </section>
 
           <section>
-            <h3>DOM Access: HTML 5</h3>
-            <p>In newer browsers, you can use methods <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName">getElementsByClassName</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector</a></code>.</p><br>
-            <p>Available in <a href="http://caniuse.com/#search=getElementsByClassName">IE9+, FF3.6+, Chrome 17+, Safari 5+</a>:</p>
-<pre><code class="javascript">document.getElementsByClassName(className);
-</code></pre><br>
-          <p>Available in <a href="http://caniuse.com/#search=querySelectorAll">IE8+, FF3.6+, Chrome 17+, Safari 5+</a>:</p>
-<pre><code class="javascript">document.querySelector(cssQuery);;
-</code></pre>
-          </section>
-
-          <section>
-            <h3>getElement vs. getElements</h3>
-            <p>Any method that starts with <code>getElement</code> will return a <strong>single</strong> node.</p>
+            <h3>querySelector vs. getElements</h3>
+            <p><code>querySelector</code> will return a <strong>single</strong> node.</p>
 <pre><code class="javascript">document.querySelector('#uniqueID'); // returns a single node
 </code></pre><br>
           <p>Any method that starts with <code>getElements</code> will return an <strong>array</strong> of nodes. To modify a single node, you will need to use bracket notation to get the correct one.</p>
@@ -205,8 +194,23 @@ var specificParagraph = document.getElementsByTagName('p')[2];
           </section>
 
           <section>
+            <h3>DOM Nodes: Changing Text</h3>
+            <p>You can use <code>innerText</code> to get or set the text of an element.</p>
+<pre><code class="html">&lt;h1 id="main-heading"&gt;Welcome, guests!&lt;/h1&gt;
+</code></pre>
+          <p>We could change the src attribute this way:</p>
+<pre><code class="javascript">var pageGreeting = document.querySelector('#main-heading');
+
+// will return the text
+pageGreeting.innerText
+
+// will replace old text
+pageGreeting.innerText = "Welcome, friends!"</code></pre>
+          </section>
+
+          <section>
             <h3>DOM Nodes: Getting and Setting Attributes</h3>
-            <p>You can also use <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute">getAttribute</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">setAttribute</a></code></p>
+            <p>You can use <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute">getAttribute</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">setAttribute</a></code></p>
 <pre><code class="html">&lt;img id="kittenPic" src="http://placekitten.com/g/200/300" alt="cat"/&gt;
 </code></pre>
           <p>We could change the src attribute this way:</p>
@@ -253,8 +257,8 @@ pageBody.style.fontFamily = 'sans-serif';
 
           <section>
           <h3>Let's Develop It</h3>
-          <p>Create a simple HTML page or <a href="dist/files/class4.zip">use this sample code</a>.</p>
-          <p>Isolate a node (an element on the page) and change an attribute or add a new style.</p>
+          <p>Create a simple HTML page that contains an h1, an input field, a button, and an image.</p>
+          <p>Using JavaScript, isolate a node (an element on the page) and change an attribute or add a new style.</p>
           </section>
 
       <!-- Events -->
@@ -288,16 +292,6 @@ pageBody.style.fontFamily = 'sans-serif';
           </ul>
         </section>
 
-        <section>
-          <h3>Calling Functions from HTML</h3>
-          <p>You can call a function directly from your HTML code:</p>
-<pre><code class="html">&lt;button id="myBtn" onclick="sayHi()"&gt;Click Me!&lt;/button&gt;
-</code></pre>
-<pre><code class="javascript">function sayHi (event) {
-  alert('Hi!');
-};</code></pre>
-        </section>
-
           <section>
           <h3>Calling Functions from JavaScript</h3>
           <p>You can call a function from the addEventListener:</p>
@@ -313,8 +307,8 @@ button.addEventListener("click", function (event) {
 
         <section>
           <h3>Let's Develop It</h3>
-          <p>Go back to the sample files you downloaded earlier.</p>
-          <p>Make some JavaScript code fire after a <code>mouseover</code> event.</p>
+          <p>Go back to your simple HTML page.</p>
+          <p>Make the background of the page change after a <code>mouseover</code> event of your h1.</p>
         </section>
 
       <!-- User input -->
@@ -341,7 +335,7 @@ console.log(name);
 
         <section>
           <h3>Let's Develop It</h3>
-          <p>Collect a value from the input box on the page. Use it inside a function of some kind. For example, collect a number and multiply it by five or collect a name and display a greeting.</p>
+          <p>Go back to your tip calculator. Add two input fields, one for bill and one for tip. Use JavaScript to listen for a click event on the button. When the button is clicked, it should calculate the bill total and display the results inside of a paragraph tag.</p>
         </section>
 
       <!-- Final slides-->
